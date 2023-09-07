@@ -1,0 +1,7 @@
+{
+  "name": "MyIonicApptabs",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
