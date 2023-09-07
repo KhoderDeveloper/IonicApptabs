@@ -7,7 +7,7 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
 
 import { Tab1PageRoutingModule } from './tab1-routing.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { HomeModule } from './home/home.module';
+import { TmsModule } from './tms/tms.module';
 
 @NgModule({
   imports: [
@@ -17,7 +17,7 @@ import { HomeModule } from './home/home.module';
     ExploreContainerComponentModule,
     Tab1PageRoutingModule,
     FontAwesomeModule,
-    HomeModule,
+    TmsModule,
   ],
   declarations: [Tab1Page]
 })

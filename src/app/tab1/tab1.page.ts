@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
   public appPages = [
-    { title: 'Favorites', url: '', icon: 'home' ,open: false , subPages: [
+    { title: 'Favorites', url: '', icon: 'star' ,open: false , subPages: [
       { title: 'Tracking', url: '/tms/tracking', icon: 'airplane' }
     ] },
     { title: 'TMS', url: '', icon: '' ,open: false , subPages: [

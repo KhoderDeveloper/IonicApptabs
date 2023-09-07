@@ -1,1 +1,64 @@
-<app-home></app-home>
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-button>
+                <fa-icon [icon]="['fas', 'circle-user']" size="2x"></fa-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-buttons slot="end">
+            <ion-button>
+                <fa-icon [icon]="['far', 'bell']" size="2x"></fa-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <h1 class="custom-header">Hello ,SG test!</h1>
+    <ion-searchbar class="custom-searchbar" placeholder="Search..."></ion-searchbar>
+
+    <ion-card class="card-styling">
+        <ion-card class="first-card">
+            <ion-card-content>
+                <img class="custom-img" alt="Silhouette of mountains"
+                    src="https://ionicframework.com/docs/img/demos/card-media.png" />
+                <ion-card-title class="custom-card-title">Track Your Shipments</ion-card-title>
+                <ion-card-subtitle><ion-label class="custom-label">View and track all shipments </ion-label><ion-button
+                        class="explore-button" shape="round" size="small">Explore <ion-icon slot="end"
+                            name="arrow-forward-outline"></ion-icon></ion-button></ion-card-subtitle>
+            </ion-card-content>
+        </ion-card>
+        <ion-card-title class="custom-card-title2">Discover</ion-card-title>
+        <ion-card class="second-card">
+            <ion-card-content>
+                <ion-list id="inbox-list">
+                    <div *ngFor="let p of appPages ; let i = index">
+                        <div *ngIf="p.url">
+                            <ion-item routerDirection="root" [routerLink]="[p.url]" routerLinkActive="selected"
+                                lines="none" detail="false">
+                                <ion-icon aria-hidden="true" slot="start" [ios]="p.icon + '-outline'"
+                                    [md]="p.icon + '-sharp'"></ion-icon>
+                                <ion-label>{{ p.title }}</ion-label>
+                            </ion-item>
+                        </div>
+                        <ion-item button *ngIf="p.subPages" (click)="p.open = !p.open" [class.active-parent]="p.open"
+                            detail="false">
+                            <ion-icon *ngIf="p.subPages" slot="end"
+                                [ios]="p.open ? 'chevron-down' + '-outline' : 'chevron-forward' + '-outline'"
+                                [md]="p.open ? 'chevron-down' + '-sharp' : 'chevron-forward' + '-sharp'"></ion-icon>
+                            <ion-label>{{ p.title }}</ion-label>
+                        </ion-item>
+                        <ion-list *ngIf="p.open">
+                            <ion-item *ngFor="let subPagee of p.subPages ; let i = index" routerDirection="root"
+                                [routerLink]="[subPagee.url]" routerLinkActive="selected" lines="none" detail="false">
+                                <ion-icon aria-hidden="true" slot="start" [ios]="subPagee.icon + '-outline'"
+                                    [md]="subPagee.icon + '-sharp'"></ion-icon>
+                                <ion-label>{{ subPagee.title }}</ion-label>
+                            </ion-item>
+                        </ion-list>
+                    </div>
+                </ion-list>
+            </ion-card-content>
+        </ion-card>
+    </ion-card>
+
+</ion-content>

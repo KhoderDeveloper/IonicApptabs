@@ -3,18 +3,19 @@ import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 import { IonicModule } from "@ionic/angular";
-import { HomeComponent } from "./home.component";
-import { HomeRoutingModule } from "./home-routing.module";
+import { ExploreContainerComponentModule } from "src/app/explore-container/explore-container.module";
+import { TmsRoutingModule } from "./tms-routing.module";
+import { TrackingComponent } from "./tracking/tracking.component";
 
 @NgModule({
     imports: [
       IonicModule,
       CommonModule,
       FormsModule,
-      HomeRoutingModule,
+      ExploreContainerComponentModule,
       FontAwesomeModule,
+      TmsRoutingModule
     ],
-    declarations: [HomeComponent],
-    exports:[HomeComponent]
+    declarations: [TrackingComponent]
   })
-  export class HomeModule {}
+  export class TmsModule {}
